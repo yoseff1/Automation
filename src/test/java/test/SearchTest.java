@@ -30,13 +30,14 @@ public class SearchTest {
 		Assert.assertTrue(errorText.contains("No results"), "Expected to contain no results text");
 		driver.close();	
 	}*/
+	@Test
 	public void testSearchWithResults() {
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
 		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("http://automationpractice.com/index.php");
-		driver.findElement(By.id("search_query_top")).sendKeys("dress");
-		driver.findElement(By.name("submit_search")).click();
-		String titleText = driver.findElement(By.className("lighter")).getText();
-		Assert.assertTrue(titleText.contains("DRESS"), "Expected to contain DRESS but not found");
+		driver.findElement(By.xpath("//*[@id=\'block_top_menu\']/ul/li[3]/a")).click();
+		String titleText = driver.findElement(By.className("cat-name")).getText();
+		Assert.assertTrue(titleText.contains("T-SHIRTS"), "Expected to contain T-SHIRTS but not found");
 		driver.close();
+	}
 }
