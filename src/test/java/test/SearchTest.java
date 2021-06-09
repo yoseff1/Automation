@@ -1,43 +1,66 @@
 package test;
 
+
+
 //importamos los drivers
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-public class SearchTest {
-	/*@Test //se usa para traer el anotations
-	public void testSearchWithResults() {
+
+import extras.Waiter;
+import pageObjects.Articles;
+import pageObjects.Principal;
+
+public class SearchTest { // aqui va todo lo que aplica a la prueba una unica vez
+	private WebDriver driver;
+	private Principal principal;
+	private Articles articles;
+	
+	@BeforeTest // lo que aplica antes de cada test
+	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
-		WebDriver driver = new ChromeDriver(); // elijo el explorador
-		driver.navigate().to("http://automationpractice.com/index.php"); //ubicacion
-		driver.findElement(By.id("search_query_top")).sendKeys("dress"); //empiezo a seleccionar acciones
-		driver.findElement(By.name("submit_search")).click();
-		String titleText = driver.findElement(By.className("lighter")).getText();//creo un metodo para la deficion de texto
-		Assert.assertTrue(titleText.contains("DRESS"), "Expected to contain DRESS but not found");//condicion de exito validando por booleano
-		driver.close();
-		
+		driver = new ChromeDriver();
+		driver.navigate().to("http://automationpractice.com/");
+		principal = new Principal(driver);
+		articles = new Articles(driver);
 	}
+		
+	@AfterTest
+	public void afterTest() {
+		driver.close();
+		driver.quit();
+	}
+	
+	@BeforeMethod
+	public void beforeMethod() {
+		System.out.println("Empieza un test");
+	}
+	
+	@AfterMethod
+	public void afterMethod() {
+		System.out.println("Finaliza el test");
+	}
+	
+	@Test
+	public void testSearchWithResult() {
+		principal.search("dress");
+		Waiter.waitForPage(4000);
+		Assert.assertTrue(articles.articleName().contains("DRESS"),"Expected to contain DRESS but not found");
+	}
+	
 	@Test
 	public void testSearchWithoutResult() {
-		System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
-		WebDriver driver = new ChromeDriver(); // elijo el explorador
-		driver.navigate().to("http://automationpractice.com/index.php"); //ubicacion
-		driver.findElement(By.id("search_query_top")).sendKeys("hola mundo");
-		driver.findElement(By.name("submit_search")).click();
-		String errorText = driver.findElement(By.xpath("//*[@id=\'center_column\']/p")).getText();
-		Assert.assertTrue(errorText.contains("No results"), "Expected to contain no results text");
-		driver.close();	
-	}*/
-	@Test
-	public void testSearchWithResults() {
-		System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
-		WebDriver driver = new ChromeDriver();
-		driver.navigate().to("http://automationpractice.com/index.php");
-		driver.findElement(By.xpath("//*[@id=\'block_top_menu\']/ul/li[3]/a")).click();
-		String titleText = driver.findElement(By.className("cat-name")).getText();
-		Assert.assertTrue(titleText.contains("T-SHIRTS"), "Expected to contain T-SHIRTS but not found");
-		driver.close();
+		principal.search("hola mundo");
+		Waiter.waitForPage(4000);
+		Assert.assertTrue(articles.errorMessage().contains("No results"), "Expected to contain no results text");
 	}
+
+	
+	
 }

@@ -5,7 +5,11 @@
     <classes>
       <class name="test.SearchTest">
         <methods>
-          <include name="testSearchWithResults"/>
+          <include name="beforeTest"/>
+          <include name="afterMethod"/>
+          <include name="testSearchWithoutResult"/>
+          <include name="beforeMethod"/>
+          <include name="afterTest"/>
         </methods>
       </class> <!-- test.SearchTest -->
     </classes>

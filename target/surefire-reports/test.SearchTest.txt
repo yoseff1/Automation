@@ -1,11 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: test.SearchTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.289 sec <<< FAILURE!
-testSearchWithResults(test.SearchTest)  Time elapsed: 8.622 sec  <<< FAILURE!
-java.lang.AssertionError: Expected to contain T-SHIRTS but not found expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertTrue(Assert.java:45)
-	at test.SearchTest.testSearchWithResults(SearchTest.java:40)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.474 sec
