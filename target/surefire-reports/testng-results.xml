@@ -1,45 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-09T18:10:17 ART" name="test.SearchTest" finished-at="2021-06-09T18:10:40 ART" duration-ms="22732">
+  <suite started-at="2021-06-10T17:59:43 ART" name="Command line suite" finished-at="2021-06-10T18:00:22 ART" duration-ms="39338">
     <groups>
     </groups>
-    <test started-at="2021-06-09T18:10:17 ART" name="Command line test" finished-at="2021-06-09T18:10:40 ART" duration-ms="22732">
-      <class name="test.SearchTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.SearchTest@25af5db5]" started-at="2021-06-09T18:10:17 ART" name="beforeTest" finished-at="2021-06-09T18:10:27 ART" duration-ms="9543" status="PASS">
+    <test started-at="2021-06-10T17:59:43 ART" name="Command line test" finished-at="2021-06-10T18:00:22 ART" duration-ms="39338">
+      <class name="test.OrderTest">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.OrderTest@13c27452]" started-at="2021-06-10T17:59:43 ART" name="beforeTest" finished-at="2021-06-10T17:59:53 ART" duration-ms="9941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.SearchTest@25af5db5]" started-at="2021-06-09T18:10:27 ART" name="beforeMethod" finished-at="2021-06-09T18:10:27 ART" duration-ms="1" status="PASS">
+        <test-method signature="seachByHigherPriceTest()[pri:0, instance:test.OrderTest@13c27452]" started-at="2021-06-10T18:00:12 ART" name="seachByHigherPriceTest" finished-at="2021-06-10T18:00:22 ART" duration-ms="10310" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- seachByHigherPriceTest -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.OrderTest@13c27452]" started-at="2021-06-10T18:00:22 ART" name="afterTest" finished-at="2021-06-10T18:00:22 ART" duration-ms="162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- test.OrderTest -->
+      <class name="test.SearchTest">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:test.SearchTest@5bcea91b]" started-at="2021-06-10T17:59:53 ART" name="beforeTest" finished-at="2021-06-10T18:00:00 ART" duration-ms="6893" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.SearchTest@5bcea91b]" started-at="2021-06-10T18:00:00 ART" name="beforeMethod" finished-at="2021-06-10T18:00:00 ART" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testSearchWithResult()[pri:0, instance:test.SearchTest@25af5db5]" started-at="2021-06-09T18:10:27 ART" name="testSearchWithResult" finished-at="2021-06-09T18:10:33 ART" duration-ms="6428" status="PASS">
+        <test-method signature="testSearchWithResult()[pri:0, instance:test.SearchTest@5bcea91b]" started-at="2021-06-10T18:00:00 ART" name="testSearchWithResult" finished-at="2021-06-10T18:00:05 ART" duration-ms="4620" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchWithResult -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.SearchTest@25af5db5]" started-at="2021-06-09T18:10:33 ART" name="afterMethod" finished-at="2021-06-09T18:10:33 ART" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.SearchTest@5bcea91b]" started-at="2021-06-10T18:00:05 ART" name="afterMethod" finished-at="2021-06-10T18:00:05 ART" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.SearchTest@25af5db5]" started-at="2021-06-09T18:10:33 ART" name="beforeMethod" finished-at="2021-06-09T18:10:33 ART" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.SearchTest@5bcea91b]" started-at="2021-06-10T18:00:05 ART" name="beforeMethod" finished-at="2021-06-10T18:00:05 ART" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="testSearchWithoutResult()[pri:0, instance:test.SearchTest@25af5db5]" started-at="2021-06-09T18:10:33 ART" name="testSearchWithoutResult" finished-at="2021-06-09T18:10:40 ART" duration-ms="6570" status="PASS">
+        <test-method signature="testSearchWithoutResult()[pri:0, instance:test.SearchTest@5bcea91b]" started-at="2021-06-10T18:00:05 ART" name="testSearchWithoutResult" finished-at="2021-06-10T18:00:12 ART" duration-ms="7005" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSearchWithoutResult -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.SearchTest@25af5db5]" started-at="2021-06-09T18:10:40 ART" name="afterMethod" finished-at="2021-06-09T18:10:40 ART" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.SearchTest@5bcea91b]" started-at="2021-06-10T18:00:12 ART" name="afterMethod" finished-at="2021-06-10T18:00:12 ART" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.SearchTest@25af5db5]" started-at="2021-06-09T18:10:40 ART" name="afterTest" finished-at="2021-06-09T18:10:40 ART" duration-ms="139" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:test.SearchTest@5bcea91b]" started-at="2021-06-10T18:00:22 ART" name="afterTest" finished-at="2021-06-10T18:00:22 ART" duration-ms="158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- test.SearchTest -->
     </test> <!-- Command line test -->
-  </suite> <!-- test.SearchTest -->
+  </suite> <!-- Command line suite -->
 </testng-results>

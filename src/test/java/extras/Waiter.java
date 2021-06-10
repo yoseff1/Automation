@@ -1,6 +1,10 @@
 package extras;
 
 public class Waiter {
+	/**
+	 * this is for a timer 
+	 * @param mills define how secs will have to wait
+	 */
 	public static void waitForPage (int mills) {
 		try {
 			Thread.sleep(mills);//añade tiempo de espera, miles significa segs
