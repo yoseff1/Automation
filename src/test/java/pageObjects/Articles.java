@@ -2,7 +2,9 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Articles {
 	//private String articleBanner = "lighter";
@@ -18,10 +20,14 @@ public class Articles {
 		orderSelect = By.id("selectProductSort");
 	}
 	public String articleName() {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(articleBanner), "asdfsdfs"));
 		return driver.findElement(articleBanner).getText();
 	}
 	
 	public String errorMessage() {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(errorBanner));
 		return driver.findElement(errorBanner).getText();
 	}
 	public void selectArticleByText(String value) {
