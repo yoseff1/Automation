@@ -1,39 +1,12 @@
 package test;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import extras.Waiter;
-import pageObjects.Articles;
-import pageObjects.Principal;
+import pageObjects.Base;
 
-public class OrderTest {
-	private WebDriver driver;
-	private Principal principal;
-	private Articles articles;
-	@BeforeTest // lo que aplica antes de cada test
-	public void beforeTest() {
-		System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
-		driver = new ChromeDriver();
-		driver.navigate().to("http://automationpractice.com/");
-		principal = new Principal(driver);
-		articles = new Articles(driver);
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS); //para eliminar waits
-		
-	}
-		
-	@AfterTest
-	public void afterTest() {
-		driver.close();
-		driver.quit();
-	}
-	
-	@Test
+public class OrderTest extends Base{
+
+	@Test(description = "This is an order by higger first")
 	public void seachByHigherPriceTest() {
 		principal.search("DRESS");
 		articles.selectArticleByText("Price: Highest first");
