@@ -12,12 +12,14 @@ public class Articles {
 	private By articleBanner;
 	private By errorBanner;
 	private By orderSelect;
+	private By titleBanner;
 	private WebDriver driver;
 	public Articles(WebDriver driver) {
 		this.driver = driver;
 		articleBanner = By.className("lighter");
 		errorBanner = By.xpath("//*[@id=\'center_column\']/p");
 		orderSelect = By.id("selectProductSort");
+		titleBanner = By.id("titulo_seleccion");
 	}
 	public String articleName() {
 		WebDriverWait wait = new WebDriverWait(driver,30);
@@ -41,5 +43,10 @@ public class Articles {
 	public void selectArticleByValue(String value) {
 		Select order = new Select(driver.findElement(orderSelect));
 		order.deselectByValue(value);
+	}
+	public String errorlogin() {
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(titleBanner));
+		return driver.findElement(titleBanner).getText();
 	}
 }

@@ -15,7 +15,7 @@ public class SearchTest extends Base{ // aqui va todo lo que aplica a la prueba 
 		Assert.assertTrue(articles.articleName().contains("DRESS"),"Expected to contain DRESS but not found");
 	}
 	
-	@Test(description = "This is a search with not results")
+	@Test(description = "This is a search with not results",enabled=false)
 	public void testSearchWithoutResult() {
 		principal.search("hola mundo");
 		Assert.assertTrue(articles.errorMessage().contains("No results"), "Expected to contain no results text");
