@@ -44,7 +44,7 @@ public class LoginTest {
 	}
 	@Test(description = "Login ok")
 	public void trueLogin() {
-		principal.login("re94731266","reserv16");
+		principal.login("re94731266","reserv15");
 		Assert.assertTrue(articles.errorlogin().contains("Selección de visualización de página principal"), "Expected to contain admin page");
 	}
 }
