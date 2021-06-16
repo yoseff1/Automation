@@ -25,14 +25,11 @@ public class Principal {
 		driver.findElement(searchBox).sendKeys(searchParameter);
 		driver.findElement(searchButton).click();
 	}
-	public void login (String login) {
+	public void login (String login, String pass) {
 		driver.findElement(textBox).sendKeys(login);
-		
-	}
-	public void pass (String pass) {
 		driver.findElement(password).sendKeys(pass);
 		driver.findElement(loginButton).click();
 		
 	}
-
+	
 }
